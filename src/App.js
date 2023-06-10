@@ -1,15 +1,8 @@
 import React, { useState } from 'react'
 
 function App(){
-  const[inputvalue,setInputValue] = useState("");
-  const [items, setItems] = useState<Shuffle[]>([]);
+  const [items, setItems] = useState(["Item 1","Item 2","Item 3","Item 4","Item 5"]);
   
-
-
-  type Shuffle = {
-   inputValue: String;
-  };
-
   const shuffleItems = () => {
     const shuffledItems = [...items];
     for(let i = shuffledItems.length - 1; i > 0; i--) {
@@ -22,10 +15,10 @@ function App(){
   return (
     <div>
       <h1>ランチシャッフル!!!</h1>
-      <from onSubmit={() => {}}>
+      <form onSubmit={() => {}}>
         <input type="text" onChange={() => {}} className="inputText" />
         <input type="submit" value="作成" className="submitButton" />
-      </from>
+      </form>
       <button onClick={shuffleItems}>シャッフル</button>
       <u1>
         {items.map((item, index) => (
